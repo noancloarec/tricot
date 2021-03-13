@@ -6,7 +6,7 @@ const InputColorLabel = styled.label`
   background-color : ${props => props.color};
   display : inline-block;
   > input {
-      visibility : hidden;
+      opacity : 0;
   }
 `;
 /**
@@ -17,7 +17,7 @@ interface Props{
     value : string;
 }
 const ColorPicker = ({onChange, value} : Props) => (
-    <InputColorLabel color={value}>
+    <InputColorLabel color={value} tabIndex={0}>
         <input value={value} type="color" onChange={event => onChange(event.target.value)}/>
     </InputColorLabel>
 );
